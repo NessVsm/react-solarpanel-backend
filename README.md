@@ -117,8 +117,8 @@ As seguintes ferramentas foram utilizadas na construção deste projeto:<br />
       </tr>
      <tr>
         <td><b> DELETE </b></td>
-        <td> -- </td>
-        <td> localhost:3000/users,1 </td>
+        <td> {id} </td>
+        <td> localhost:3000/users/1 </td>
         <td> Deleta o usuário que possue o id informado </td>
       </tr>
       <tr>
@@ -130,7 +130,7 @@ Este endpoint serve apenas como consulta e não deverá ser utilizado no sistema
       </tr>
      <tr>
         <td><b> GET </b></td>
-        <td> -- </td>
+        <td> {state} </td>
         <td> localhost:3000/solar_data/CA </td>
         <td> Retorna informações de todos os dados de painéis solares de acordo com o estado passado como parâmetro.</td>
       </tr>
