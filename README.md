@@ -37,9 +37,6 @@ username VARCHAR (100),
 password VARCHAR (100)
 )
 
-```
-<br />
-```
 
 CREATE TABLE solar_data(
 id SERIAL PRIMARY KEY,
