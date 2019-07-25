@@ -14,7 +14,7 @@ app.listen(process.env.PORT || 3000, () => {
 ``` 
 <br />
 
-<b> CRIANDO BD & TABELAS <b/><br />
+<b> CRIANDO BD & TABELAS </b><br />
 
 Para utilização da API é necessário a criação de um banco de dados Postgresql sob o nome <b> orbita </b>, onde serão inseridas as tabelas <b>users</b> e <b>solar_data</b>, utilizadas nas requisicões http.<br />
 Para criação do BD, o seguinte comando deve ser inserido na ferramenta de conexão com o Postgres de sua preferência.<br />
