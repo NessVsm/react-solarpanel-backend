@@ -14,6 +14,61 @@ app.listen(process.env.PORT || 3000, () => {
 ``` 
 <br />
 
+<b> CRIANDO BD & TABELAS <b/><br />
+
+Para utilização da API é necessário a criação de um banco de dados Postgresql sob o nome <b> orbita </b>, onde serão inseridas as tabelas <b>users</b> e <b>solar_data</b>, utilizadas nas requisicões http.<br />
+Para criação do BD, o seguinte comando deve ser inserido na ferramenta de conexão com o Postgres de sua preferência.<br />
+
+```
+CREATE DATABASE orbita
+````
+<br />
+Após esta criação, dentro do banco de dados devem ser inseridos os seguintes comandos:<br />
+
+```
+
+CREATE TABLE users(
+id SERIAL PRIMARY KEY,
+email VARCHAR(100)UNIQUE,
+state VARCHAR(3),
+zipcode VARCHAR(100),
+name VARCHAR (100),
+username VARCHAR (100),
+password VARCHAR (100)
+)
+
+```
+<br />
+```
+
+CREATE TABLE solar_data(
+id SERIAL PRIMARY KEY,
+provider VARCHAR (500),
+installation_date VARCHAR(100),
+system_size FLOAT (15),
+zipcode VARCHAR(10),
+state VARCHAR (3),
+cost NUMERIC (15)
+)
+```
+<br /> 
+Estes comandos criarão as tabelas a serem utilizadas que, uma vez tendo sido executados, torna possível a inserção de informações. Vale lembrar que para a utilização da API é necessário que ao menos um usuário já esteja cadastrado.
+<br />
+
+```
+INSERT INTO users (email, state, zipcode, name, username, password)
+VALUES('katleen@hotmail.com','OH','938421', 'Katleen', 'Kat','$2a$10$gjI2sobkPQ7UDKqterYm5OC0U91EPRpayPL4m8u.gVXPcCn78G4I.')
+```
+senha decriptografada: 123456
+<br />
+
+```
+INSERT INTO solar_data(provider,installation_date,system_size,zipcode,state,cost)
+VALUES('California Public Utilities Commission (Currently Interconnected Dataset) & California Public Utilities Commission (California Solar Initiative)','12/14/09','1.505','92113','CA','609.2389144')
+```
+
+<br />
+
 <b> REGRAS GERAIS </b><br />
 
 Para utilização da API é necessária a existência de um banco de dados PostgreSQL para consulta dos dados do usuário e dos panéis solares que, devido ao seu tamanho, não foram disponibillizados. A criação da tabela de Usuários seguiu os padrões apresentados abaixo, ao passo que a de Painéis Solares foi realizada a partir da conversão dos dados do json em colunas de mesmo nome.<br /><br />
